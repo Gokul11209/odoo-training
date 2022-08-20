@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record id="view_department_form" model="ir.ui.view">
+            <field name="name">employe.name.form</field>
+            <field name="model">employe.name</field>
+            <field name="arch" type="xml">
+                <form string="department">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="Name"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="adderss"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_department_tree" model="ir.ui.view">
+            <field name="name">hr.department.tree</field>
+            <field name="model">hr.department</field>
+            <field name="arch" type="xml">
+                <tree string="Companies" sample="1">
+                    <field name="display_name"/>
+                    <field name="company_id"/>
+                    <field name="manager_id"/>
+                    <field name="total_employee" string="Employees"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_sale_estimation_pr" model="ir.actions.act_window">
+            <field name="name">employe name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employe.name</field>
+            <field name="view_mode">form,tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create New Record
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_sale_estimation_pr" id="sale_estimation_process_menu"
+                  parent="hr.menu_hr_root" name="Create employee"
+                  sequence="2"/>
+
+    </data>
+</odoo>

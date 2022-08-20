@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="menu_weather_information" model="website.menu">
+        <field name="name">Student</field>
+        <field name="url">weather/info</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">5</field>
+    </record>
+
+    <record id="menu_weather_information" model="website.menu">
+        <field name="name">Student</field>
+        <field name="url">/student/info</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">60</field>
+    </record>
+</odoo>

@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <template id="add_value">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="container">
+                        <h3>
+                            <label for="email" class="control-label">Simple Calclutor</label>
+                        </h3>
+                        <form role="form" action="#" method="POST">
+                            <div class="container oe_add_value">
+
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                                <div class="form-group">
+                                    <label for="add2">Number 2</label>
+                                    <input type="number" class="form-control" id="add2" name="add2"
+                                           placeholder="Enter Number 2"/>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="add2">opertion</label>
+                                    <input type="text" class="form-control" id='demo' name="demo"
+                                           placeholder="plese click below button"/>
+                                </div>
+                                <div class="row">
+                                    <div class="ml-4 py-2 px-6">
+                                        <button type="submit" onclick="document.getElementById('demo').innerHTML='Add' " id="btn_1" class="btn btn-primary addValueBtn">ADD (+)</button>
+                                    </div>
+                                    <div class="ml-4 py-2 px-6">
+                                        <button type="submit"  class="btn btn-primary addValueBtn">Sub (-)</button>
+                                    </div>
+                                    <div class="ml-4 py-2 px-6">
+                                        <button type="submit"  class="btn btn-primary addValueBtn">Multi (*)</button>
+                                    </div>
+                                    <div class="ml-4 py-2 px-6">
+                                        <button type="submit"  class="btn btn-primary addValueBtn">Div (/)</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sum">Total</label>
+                                    <input type="number" class="form-control" id="sum" name="sum"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,77 @@
+<odoo>
+
+    <template id="snippet_testimonial" name="login">
+        <section class="snippet_testimonial" id="snippet_test">
+            <div class="container">
+                <div id="wrap">
+                    <div class="container">
+                        <h3>
+                            <label for="email" class="control-label">Login From</label>
+                        </h3>
+                        <form role="form" action="#" method="POST">
+                            <div class="container">
+
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <div class="form-group">
+                                    <label for="add1">Number 1</label>
+                                    <input type="text" class="form-control" id="add1" name="name"
+                                           placeholder="Enter Number 1"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="add2">Number 2</label>
+                                    <input type="email" class="form-control" id="add2" name="email"
+                                           placeholder="Enter Mail"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="add2">Number 2</label>
+                                    <input type="text" class="form-control" id="add2" name="phone"
+                                           placeholder="Enter Phone Number"/>
+                                </div>
+                                <div class="row">
+                                    <div class="ml-4 py-2 px-6">
+                                        <button type="submit" id="btn_1" class="btn btn-primary">Summit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+
+    <template id="world_snippet" inherit_id="website.snippets" name="new snippets">
+        <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+            <t t-snippet="employes.snippet_testimonial"
+               t-thumbnail="/employes/static/src/sea.jpeg"/>
+        </xpath>
+    </template>
+
+
+    <template id="snippet_testimonial_opt" name="Snippet" inherit_id="website.snippet_options">
+        <xpath expr="//div[@data-js='Box']" position="after">
+            <div data-selector=".s_testimonial"> <!-- Options group -->
+                <div class="dropdown-submenu">
+                    <a href="#" class="dropdown-item">Your Option</a>
+                    <div class="dropdown-menu"><!-- Options list -->
+                        <a href="#" class="dropdown-item" data-select-class="opt_shadow">Shadow Images</a>
+                        <a href="#" class="dropdown-item" data-select-class="opt_grey_bg">Grey Bg</a>
+                        <a href="#" class="dropdown-item" data-select-class="">None</a>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="snippet" inherit_id="website.snippets" name="snippets">
+        <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+            <t t-snippet="employes.snippet_testimonial_opt"
+               t-thumbnail="/employes/static/src/sea.jpeg"/>
+        </xpath>
+    </template>
+
+
+</odoo>

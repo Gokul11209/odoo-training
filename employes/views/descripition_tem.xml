@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <template id="descripition" name="Addition">
+            <t t-call="website.layout">
+                <section class="header">
+                    <nav>
+                        <a href="">
+                            <img src="" width="70%" alt=""/>
+                        </a>
+                        <div class="nav-links">
+                            <i class="fas fa-window-close" onclick="hiddenmenu()"></i>
+                            <ul>
+                                <li>
+                                    <a href="">HOME</a>
+                                </li>
+                                <li>
+                                    <a href="">ABOUT</a>
+                                </li>
+                                <li>
+                                    <a href="">COURSE</a>
+                                </li>
+                                <li>
+                                    <a href="">BLOG</a>
+                                </li>
+                                <li>
+                                    <a href="">CONTECT</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="text-box">
+                        <h1>World's Bigest University</h1>
+                        <p>This is a Bigest University in india all course are avilable here.
+                            <br/>
+                            This is a best university
+                        </p>
+                        <a href="" class="button">Visit as our university</a>
+                    </div>
+                </section>
+            </t>
+        </template>
+    </data>
+</odoo>

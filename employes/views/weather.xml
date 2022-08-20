@@ -1,0 +1,199 @@
+<odoo>
+    <data>
+        <template id="weather_template" name="weather_report">
+            <t t-call="website.layout">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#">Weather Moniter</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Weather
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Live</a>
+                                    <a class="dropdown-item" href="#">pasts</a>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0" action="">
+                            <div class="container weather_summit_btn">
+                                <input class="form-control mr-sm-2" name="city" type="search" placeholder="Search"
+                                       aria-label="Search"/>
+                                <!-- <button class="btn btn-outline-secondary  my-4 my-sm-0" type="submit">Search</button> -->
+                                <a href="#" class="btn btn-warning addValueBtn">Click</a>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+
+                <section class="text-gray-600 body-font">
+                    <div class="container px-5 py-24 mx-auto">
+                        <div class="flex flex-col text-left w-full mb-20">
+                            <h3 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+                              <strong>  Today Weather Report </strong>
+                            </h3>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>Name</b>
+                                    </label>
+                                    <input type="text" placeholder=" " name="name"/>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="psw">
+                                        <b>region</b>
+                                    </label>
+                                    <input type="text" name="region"/>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+
+                                    <label for="psw">
+                                        <b>country</b>
+                                    </label>
+                                    <input type="text" name="country"/>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+
+                                    <label for="uname">
+                                        <b>continent</b>
+                                    </label>
+                                    <input type="text" name="conti"/>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>Time</b>
+                                    </label>
+                                    <input type="text" placeholder="" name="time"/>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>cloud</b>
+                                    </label>
+                                    <input type="text" placeholder=" " name="cloud"/>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>Wind</b>
+                                    </label>
+                                    <input type="text" placeholder=" " name="wind"/>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>Pressure</b>
+                                    </label>
+                                    <input type="text" placeholder=" " name="pressure"/>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>Humdity</b>
+                                    </label>
+                                    <input type="text" placeholder=" " name="humdity"/>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>Latitude</b>
+                                    </label>
+                                    <input type="text" placeholder=" " name="lat"/>
+                                </div>
+                            </div>
+
+                             <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>Longitude</b>
+                                    </label>
+                                    <input type="text" placeholder=" " name="lon"/>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>Ceclius</b>
+                                    </label>
+                                    <input type="text" placeholder=" " name="cel"/>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+                                    <label for="uname">
+                                        <b>Farnheat</b>
+                                    </label>
+                                    <input type="text" placeholder=" " name="far"/>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="flex flex-wrap -m-2">
+
+                                    <label for="uname">
+                                        <b>Final</b>
+                                    </label>
+                                    <input type="text" placeholder="" name="final"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </t>
+        </template>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

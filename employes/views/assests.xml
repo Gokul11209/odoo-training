@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="assets_frontend" name="My Academy Style" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <script src="https://cdn.tailwindcss.com"/>
+            <link rel="stylesheet" type="text/scss" href="/employes/static/src/scss/add.scss"/>
+            <link rel="stylesheet" type="text/scss" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+                  crossorigin="anonymous"/>
+            <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
+        </xpath>
+    </template>
+</odoo>

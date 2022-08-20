@@ -1,0 +1,97 @@
+<odoo>
+    <data>
+        <template id="listing">
+            <t t-call="portal.portal_layout">
+                <form role="form" action="/create/student" method="POST">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="oe_login_buttons">
+                        <button type="Create" class="btn-primary pull-left">Create Customer</button>
+                    </div>
+                </form>
+                <t t-if="objects" t-call="portal.portal_table">
+                    <thead>
+                        <tr class="active">
+                            <th>Customer Name</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="objects" t-as="object">
+                        <tr>
+                            <td>
+                                <a class="class-name" t-attf-href="{{slug(object)}}">
+                                    <t t-esc="object.display_name"/>
+                                </a>
+                            </td>
+                            <td>
+                                <t t-esc="object.country_id.name"/>
+                            </td>
+                            <td>
+                                <t t-esc="object.state_id.name"/>
+                            </td>
+                            <td>
+                                <t t-esc="object.phone"/>
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="student_info">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="container">
+                        <h3>
+                            <label for="email" class="control-label">CREATE STUDENT</label>
+                        </h3>
+                        <form role="form" action="" method="POST">
+                            <div class="container student_value_con">
+
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                                <div class="form-group">
+                                    <label for="add2">Name</label>
+                                    <input type="text" class="form-control" id="add2" name="name"
+                                           placeholder="Enter Name"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="country_id">Country</label>
+                                    <select name="country_id" class="country_id form-control">
+                                        <t t-foreach='country' t-as="c">
+                                            <option class="country-id" t-att-value="c.id" t-att-data-country-id="c.id">
+                                                <span t-esc="c.name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="state_id">State</label>
+                                    <select name="state_id" class="state_id form-control">
+                                        <t t-foreach='state' t-as="name">
+                                             <option class="state-id" t-att-value="name.id" t-att-data-state-id="name.id">
+                                                <span t-esc="name.name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="add2">Phone</label>
+                                    <input type="text" class="form-control" id='phone' name="phone"
+                                           placeholder="plese click below button"/>
+                                </div>
+                                <a href="#" class="btn btn-warning addValueBtn">Click</a>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
